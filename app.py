@@ -19,6 +19,7 @@ def parse_schedule(group):
     soup = BeautifulSoup(response.text, "html.parser")
     f_schedule = ""  # инициализируем строку для расписания
     cur_date = datetime.datetime.now().strftime("%-d.%m")
+    print(cur_date)
     for day_schedule in soup.find_all('div', class_='panel-body'):
         schedule = ""
         prev_div = day_schedule.find_previous_sibling('div')
